@@ -1,5 +1,6 @@
 package br.com.senai.api.model.input;
 
+import br.com.senai.api.model.UsuarioDTO;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -7,20 +8,20 @@ import lombok.Setter;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class PessoaInput {
+public class PessoaInputDTO {
 
     @Valid
     @NotBlank
     String nome;
 
-    @Valid
-    @NotBlank
-    String email;
+    @NotNull
+    private UsuarioDTO usuario;
 
     @Valid
     @NotBlank

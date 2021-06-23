@@ -21,8 +21,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
     @Override
     protected void configure(HttpSecurity http) throws  Exception {
         http.csrf().disable().authorizeRequests()
-                .antMatchers(HttpMethod.GET,"/entregas").hasRole("ADMIN")
+                //.antMatchers(HttpMethod.GET,"/entregas").hasRole("ADMIN")
                 .antMatchers(HttpMethod.GET,"/pessoas").permitAll()
+                .antMatchers(HttpMethod.POST,"/pessoas").permitAll()
                 .anyRequest().authenticated().and().formLogin().permitAll()
                 .and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
     }
@@ -33,7 +34,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
     }
     @Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/botstrap/**","/style/**");
+        web.ignoring().antMatchers("/bootstrap/**","/style/**");
     }
 
 }

@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class OcorrenciaInput {
+public class OcorrenciaInputDTO {
 
     private String descricao;
 }

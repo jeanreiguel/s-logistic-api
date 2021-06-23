@@ -51,7 +51,6 @@
 //}
 package br.com.senai.domain.model;
 
-		import br.com.senai.api.model.PessoaModel;
 		import br.com.senai.domain.ValidationGroups;
 		import br.com.senai.domain.exception.NegocioException;
 		import com.fasterxml.jackson.annotation.JsonProperty;

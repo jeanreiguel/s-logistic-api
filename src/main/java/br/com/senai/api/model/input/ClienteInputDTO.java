@@ -8,7 +8,7 @@ import javax.validation.constraints.NotNull;
 
 @Getter
 @Setter
-public class ClienteInput {
+public class ClienteInputDTO {
 
     @Valid
     @NotNull
