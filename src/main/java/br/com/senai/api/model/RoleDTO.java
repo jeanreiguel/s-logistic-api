@@ -11,9 +11,7 @@ import java.util.List;
 @Getter
 @Setter
 public class RoleDTO {
-    @Id
     private String nomeRole;
 
-    @ManyToMany
-    private List<Usuario> usuarios;
+    private List<UsuarioDTO> usuarios;
 }

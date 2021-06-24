@@ -31,9 +31,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
                 .antMatchers(HttpMethod.GET,AUTH_LIST).permitAll()
                 .antMatchers(HttpMethod.POST,AUTH_LIST).permitAll()
                 .antMatchers(HttpMethod.PUT,AUTH_LIST).permitAll()
-                .antMatchers(HttpMethod.DELETE,AUTH_LIST).permitAll()
-                .anyRequest().authenticated().and().formLogin().permitAll()
-                .and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
+                .antMatchers(HttpMethod.DELETE,AUTH_LIST).permitAll();
+ //                  .anyRequest().authenticated().and().formLogin().permitAll()
+  //              .and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
     }
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {

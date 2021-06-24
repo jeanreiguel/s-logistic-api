@@ -6,6 +6,7 @@ import br.com.senai.api.model.input.RoleInputDTO;
 import br.com.senai.domain.model.Role;
 import br.com.senai.domain.service.RoleService;
 import lombok.AllArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,14 +28,15 @@ public class RoleController {
     }
 
     @GetMapping
-    public List<RoleDTO> listar() {
-        return roleService.listar();
+    public List<RoleDTO> listar() { return roleService.listar(); }
+
+    @PutMapping("/{name_role}")
+    public ResponseEntity<RoleDTO> editar(@PathVariable String name_role, @RequestBody RoleInputDTO roleInputDTO) {
+        Role role = roleAssembler.toEntity(roleInputDTO);
+        return roleService.editar(name_role, role);
     }
-    @PutMapping
-    public RoleDTO editar() {
-        return null;
-    }
-    @DeleteMapping
+
+    @DeleteMapping("/{role}")
     public void deletar(@PathVariable String role) {
         roleService.excluir(role);
     }

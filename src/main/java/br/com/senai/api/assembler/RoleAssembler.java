@@ -20,9 +20,11 @@ public class RoleAssembler {
     public RoleDTO toDTO(Role role) {
         return modelMapper.map(role, RoleDTO.class);
     }
+
     public Role toEntity(RoleInputDTO roleInput) {
         return modelMapper.map(roleInput, Role.class);
     }
+
     public List<RoleDTO> toCollection(List<Role> roles) {
         return roles.stream().map(this::toDTO).collect(Collectors.toList());
     }
