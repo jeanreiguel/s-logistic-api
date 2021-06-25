@@ -1,4 +1,4 @@
-package br.com.senai.api.model.input;
+package br.com.senai.api.input;
 
 import lombok.Getter;
 import lombok.Setter;

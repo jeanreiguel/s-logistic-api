@@ -2,7 +2,7 @@ package br.com.senai.api.controller;
 
 import br.com.senai.api.assembler.OcorrenciaAssembler;
 import br.com.senai.api.model.OcorrenciaDTO;
-import br.com.senai.api.model.input.OcorrenciaInputDTO;
+import br.com.senai.api.input.OcorrenciaInputDTO;
 import br.com.senai.domain.model.Entrega;
 import br.com.senai.domain.model.Ocorrencia;
 import br.com.senai.domain.service.EntregaService;

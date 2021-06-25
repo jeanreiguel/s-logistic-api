@@ -1,7 +1,7 @@
 package br.com.senai.api.assembler;
 
 import br.com.senai.api.model.PessoaDTO;
-import br.com.senai.api.model.input.PessoaInputDTO;
+import br.com.senai.api.input.PessoaInputDTO;
 import br.com.senai.domain.model.Pessoa;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;

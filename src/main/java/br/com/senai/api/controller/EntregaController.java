@@ -1,8 +1,8 @@
 package br.com.senai.api.controller;
 
 import br.com.senai.api.assembler.EntregaAssembler;
+import br.com.senai.api.input.EntregaInputDTO;
 import br.com.senai.api.model.EntregaDTO;
-import br.com.senai.api.model.input.EntregaInputDTO;
 import br.com.senai.domain.model.Entrega;
 import br.com.senai.domain.service.EntregaService;
 import br.com.senai.domain.service.SolicitacaoEntregaService;

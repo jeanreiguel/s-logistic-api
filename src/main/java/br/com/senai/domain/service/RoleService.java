@@ -2,8 +2,10 @@ package br.com.senai.domain.service;
 
 
 import br.com.senai.api.assembler.RoleAssembler;
+import br.com.senai.api.model.PessoaDTO;
 import br.com.senai.api.model.RoleDTO;
 import br.com.senai.domain.model.Role;
+import br.com.senai.domain.model.Usuario;
 import br.com.senai.domain.repository.RoleRepository;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -40,5 +42,13 @@ public class RoleService {
         RoleDTO roleDTO = roleAssembler.toDTO(role);
 
         return ResponseEntity.ok(roleDTO);
+    }
+    public Usuario inserir() {
+        return null;
+    }
+    public ResponseEntity<Role> buscar(String role) {
+        return roleRepository.findById(role).map(rolefind ->
+        {return ResponseEntity.ok(rolefind);}
+        ).orElse(ResponseEntity.notFound().build());
     }
 }

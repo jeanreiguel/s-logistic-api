@@ -2,7 +2,7 @@ package br.com.senai.api.assembler;
 
 
 import br.com.senai.api.model.RoleDTO;
-import br.com.senai.api.model.input.RoleInputDTO;
+import br.com.senai.api.input.RoleInputDTO;
 import br.com.senai.domain.model.Role;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;

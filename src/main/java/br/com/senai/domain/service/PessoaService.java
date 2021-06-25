@@ -2,10 +2,13 @@ package br.com.senai.domain.service;
 
 import br.com.senai.api.assembler.PessoaAssembler;
 import br.com.senai.api.model.PessoaDTO;
-import br.com.senai.api.model.input.PessoaInputDTO;
-import br.com.senai.domain.exception.NegocioException;
+import br.com.senai.api.input.PessoaInputDTO;
 import br.com.senai.domain.model.Pessoa;
+import br.com.senai.domain.model.Role;
+import br.com.senai.domain.model.RoleUser;
 import br.com.senai.domain.repository.PessoaRepository;
+import br.com.senai.domain.repository.RoleRepository;
+import br.com.senai.domain.repository.RoleUserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -19,6 +22,8 @@ public class PessoaService {
 
     private PessoaRepository pessoaRepository;
     private PessoaAssembler pessoaAssembler;
+    private RoleService roleService;
+    private RoleUserRepository roleUserRepository;
 
     @Transactional
     public Pessoa cadastrar(Pessoa pessoa) {
@@ -30,7 +35,10 @@ public class PessoaService {
 //            throw new NegocioException("Já existe uma pessoa com este e-mail cadastrado.");
 //        }
 
-        return pessoaRepository.save(pessoa);
+        pessoaRepository.save(pessoa);
+        RoleUser roleUser = new RoleUser(pessoa.getUsuario().getId(), "ROLE_USER");
+        roleUserRepository.save(roleUser);
+        return pessoa;
     }
 
     @Transactional

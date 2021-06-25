@@ -2,13 +2,12 @@ package br.com.senai.api.controller;
 
 import br.com.senai.api.assembler.PessoaAssembler;
 import br.com.senai.api.model.PessoaDTO;
-import br.com.senai.api.model.input.PessoaInputDTO;
+import br.com.senai.api.input.PessoaInputDTO;
 import br.com.senai.domain.model.Pessoa;
 import br.com.senai.domain.repository.PessoaRepository;
 import br.com.senai.domain.service.PessoaService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 

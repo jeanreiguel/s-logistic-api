@@ -1,4 +1,4 @@
-package br.com.senai.api.model.input;
+package br.com.senai.api.input;
 
 import br.com.senai.api.model.UsuarioDTO;
 import lombok.AllArgsConstructor;
@@ -21,7 +21,7 @@ public class PessoaInputDTO {
     String nome;
 
     @NotNull
-    private UsuarioDTO usuario;
+    private UsuarioInputDTO usuario;
 
     @Valid
     @NotBlank

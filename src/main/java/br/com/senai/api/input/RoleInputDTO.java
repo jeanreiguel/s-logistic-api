@@ -1,4 +1,4 @@
-package br.com.senai.api.model.input;
+package br.com.senai.api.input;
 
 import br.com.senai.domain.model.Usuario;
 import lombok.AllArgsConstructor;
@@ -17,7 +17,4 @@ import java.util.List;
 public class RoleInputDTO {
     @Id
     private String nomeRole;
-
-    @ManyToMany
-    private List<Usuario> usuarios;
 }
