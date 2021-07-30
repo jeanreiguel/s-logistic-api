@@ -1,5 +1,4 @@
 
-INSERT INTO usuario VALUES (null,"jean@gmail.com","a");
 
 ALTER TABLE pessoa ADD COLUMN usuario_id bigint NOT NULL DEFAULT 1;
 
