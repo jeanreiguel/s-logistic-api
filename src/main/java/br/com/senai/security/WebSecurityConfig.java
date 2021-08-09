@@ -41,7 +41,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.POST, AUTH_LIST).permitAll()
                 .antMatchers(HttpMethod.PUT, AUTH_LIST).permitAll()
                 .antMatchers(HttpMethod.DELETE, AUTH_LIST).permitAll()
-                .anyRequest().authenticated()
+                .anyRequest().authenticated().and().cors()
                 .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
                 .deleteCookies("token").invalidateHttpSession(true);
